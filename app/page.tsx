@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { getPosts } from '@/lib/posts'
+import { getPosts, type Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 
 export default async function Home() {
-  let posts = []
+  let posts: Post[] = []
   try {
     posts = getPosts().slice(0, 5) // 최신 5개 포스트만 표시
   } catch (error) {

@@ -1,8 +1,8 @@
-import { getPosts } from '@/lib/posts'
+import { getPosts, type Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 
 export default async function BlogPage() {
-  let posts = []
+  let posts: Post[] = []
   try {
     posts = getPosts()
   } catch (error) {

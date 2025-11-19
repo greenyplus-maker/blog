@@ -16,8 +16,8 @@ export default async function Home() {
   return (
     <div className="-mt-[100px]">
       {/* 히어로 영역 */}
-      <section className="w-full h-[400px] bg-gradient-to-r from-blue-50 to-purple-50 flex items-center justify-center mb-16 mt-[100px]">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+      <section className="w-full h-[400px] bg-gradient-to-r from-blue-50 to-purple-50 flex items-center justify-center mb-16">
+        <div className="max-w-6xl mx-auto px-4 text-center pt-[100px]">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Hello
           </h1>

@@ -4,8 +4,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: '개인 블로그',
-  description: '개인 블로그에 오신 것을 환영합니다',
+  title: 'Personal Blog',
+  description: 'Welcome to my personal blog',
 }
 
 export default function RootLayout({
@@ -14,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body className="min-h-screen flex flex-col bg-white text-gray-900">
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow w-full">
           {children}
         </main>
         <Footer />

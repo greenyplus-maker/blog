@@ -11,8 +11,8 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">모든 포스트</h1>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8">All Posts</h1>
       
       <div className="space-y-6">
         {posts.length > 0 ? (
@@ -20,7 +20,7 @@ export default async function BlogPage() {
             <PostCard key={post.slug} post={post} />
           ))
         ) : (
-          <p className="text-gray-500">아직 작성된 포스트가 없습니다.</p>
+          <p className="text-gray-500">No posts yet.</p>
         )}
       </div>
     </div>

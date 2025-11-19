@@ -8,20 +8,20 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-center text-gray-600 text-sm">
-            © {currentYear} 개인 블로그. All rights reserved.
+            © {currentYear} Personal Blog. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm">
             <Link 
               href="/privacy" 
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              개인정보 보호방침
+              Privacy Policy
             </Link>
             <Link 
               href="/contact" 
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              연락하기
+              Contact
             </Link>
           </div>
         </div>

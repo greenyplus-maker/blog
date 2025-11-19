@@ -39,27 +39,27 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4">연락하기</h1>
+    <div className="max-w-3xl mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-4">Contact</h1>
       <p className="text-xl text-gray-600 mb-8">
-        궁금한 점이나 문의사항이 있으시면 언제든지 연락주세요.
+        Feel free to reach out if you have any questions or inquiries.
       </p>
 
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div className="bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">이메일</h3>
+          <h3 className="text-xl font-semibold mb-2">Email</h3>
           <p className="text-gray-600">contact@example.com</p>
         </div>
         <div className="bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">응답 시간</h3>
-          <p className="text-gray-600">평일 24시간 이내</p>
+          <h3 className="text-xl font-semibold mb-2">Response Time</h3>
+          <p className="text-gray-600">Within 24 hours on weekdays</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-            이름 *
+            Name *
           </label>
           <input
             type="text"
@@ -69,13 +69,13 @@ export default function ContactPage() {
             value={formData.name}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="이름을 입력하세요"
+            placeholder="Enter your name"
           />
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            이메일 *
+            Email *
           </label>
           <input
             type="email"
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-            제목 *
+            Subject *
           </label>
           <input
             type="text"
@@ -101,13 +101,13 @@ export default function ContactPage() {
             value={formData.subject}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="문의 제목을 입력하세요"
+            placeholder="Enter subject"
           />
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            메시지 *
+            Message *
           </label>
           <textarea
             id="message"
@@ -117,19 +117,19 @@ export default function ContactPage() {
             value={formData.message}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-            placeholder="문의 내용을 입력하세요"
+            placeholder="Enter your message"
           />
         </div>
 
         {submitStatus === 'success' && (
           <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-            메시지가 성공적으로 전송되었습니다. 빠른 시일 내에 답변드리겠습니다.
+            Message sent successfully. I'll get back to you soon.
           </div>
         )}
 
         {submitStatus === 'error' && (
           <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-            전송 중 오류가 발생했습니다. 다시 시도해주세요.
+            An error occurred while sending. Please try again.
           </div>
         )}
 
@@ -138,7 +138,7 @@ export default function ContactPage() {
           disabled={isSubmitting}
           className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? '전송 중...' : '메시지 보내기'}
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>

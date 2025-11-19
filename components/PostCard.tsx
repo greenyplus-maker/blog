@@ -23,7 +23,7 @@ export default function PostCard({ post }: PostCardProps) {
           <p className="mt-3 text-gray-600">{post.description}</p>
         )}
         <span className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium">
-          읽기 →
+          Read More →
         </span>
       </Link>
     </article>

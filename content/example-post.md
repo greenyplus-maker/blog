@@ -1,22 +1,22 @@
 ---
-title: 첫 번째 포스트
+title: First Post
 date: 2024-01-01
-description: 이것은 샘플 포스트입니다. 마크다운으로 작성할 수 있습니다.
+description: This is a sample post. You can write in Markdown.
 ---
 
-# 첫 번째 포스트
+# First Post
 
-안녕하세요! 이것은 블로그의 첫 번째 포스트입니다.
+Hello! This is the first post of the blog.
 
-## 마크다운 지원
+## Markdown Support
 
-이 블로그는 마크다운을 지원합니다. 다음과 같은 기능을 사용할 수 있습니다:
+This blog supports Markdown. You can use the following features:
 
-- **굵은 글씨**
-- *기울임*
-- `코드 블록`
+- **Bold text**
+- *Italic text*
+- `Code blocks`
 
-### 코드 예제
+### Code Example
 
 ```javascript
 function hello() {
@@ -24,13 +24,12 @@ function hello() {
 }
 ```
 
-### 리스트
+### List
 
-1. 첫 번째 항목
-2. 두 번째 항목
-3. 세 번째 항목
+1. First item
+2. Second item
+3. Third item
 
-## 다음 단계
+## Next Steps
 
-`content/` 디렉토리에 새로운 마크다운 파일을 추가하여 포스트를 작성하세요!
-
+Add new markdown files to the `content/` directory to create posts!

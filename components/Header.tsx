@@ -21,6 +21,12 @@ export default function Header() {
             >
               포스트
             </Link>
+            <Link 
+              href="/contact" 
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              연락하기
+            </Link>
           </div>
         </div>
       </nav>

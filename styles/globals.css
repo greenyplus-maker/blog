@@ -24,7 +24,7 @@ body {
 
 /* 마크다운 콘텐츠 스타일링 */
 .prose {
-  color: #374151;
+  color: #000000;
   line-height: 1.75;
 }
 
@@ -70,7 +70,8 @@ body {
 }
 
 .prose code {
-  background-color: #f3f4f6;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   padding: 0.125em 0.375em;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -78,8 +79,8 @@ body {
 }
 
 .prose pre {
-  background-color: #1f2937;
-  color: #f9fafb;
+  background-color: #000000;
+  color: #ffffff;
   overflow-x: auto;
   padding: 1em;
   border-radius: 0.5rem;
@@ -94,16 +95,16 @@ body {
 }
 
 .prose a {
-  color: #2563eb;
+  color: #16a34a;
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: #1d4ed8;
+  color: #15803d;
 }
 
 .prose blockquote {
-  border-left: 4px solid #e5e7eb;
+  border-left: 4px solid #000000;
   padding-left: 1em;
   font-style: italic;
   margin-top: 1.6em;

@@ -33,7 +33,7 @@ export default function Header() {
     <header 
       className={`w-full transition-all duration-300 ${
         isScrolled 
-          ? 'fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50 backdrop-blur-[100px] bg-white/30' 
+          ? 'fixed top-0 left-0 right-0 z-50 border-b border-black backdrop-blur-[100px] bg-white/30' 
           : 'absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent'
       }`}
     >
@@ -44,7 +44,7 @@ export default function Header() {
             <>
               <button
                 onClick={() => router.back()}
-                className="absolute left-0 text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2"
+                className="absolute left-0 text-black hover:text-green-600 transition-colors flex items-center gap-2"
                 aria-label="Go back"
               >
                 <svg
@@ -61,7 +61,7 @@ export default function Header() {
                 <span className="hidden sm:inline">Back</span>
               </button>
               {pageTitle && (
-                <h1 className="text-lg font-semibold text-gray-900 truncate max-w-md">
+                <h1 className="text-lg font-semibold text-black truncate max-w-md">
                   {pageTitle}
                 </h1>
               )}
@@ -72,19 +72,19 @@ export default function Header() {
               <div className="hidden md:flex gap-6">
                 <Link 
                   href="/" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-black hover:text-green-600 transition-colors"
                 >
                   Home
                 </Link>
                 <Link 
                   href="/blog" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-black hover:text-green-600 transition-colors"
                 >
                   Posts
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-black hover:text-green-600 transition-colors"
                 >
                   Contact
                 </Link>
@@ -128,10 +128,10 @@ export default function Header() {
                 }`}
               >
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-end p-4 border-b border-gray-200">
+                  <div className="flex justify-end p-4 border-b border-black">
                     <button
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      className="text-black hover:text-green-600 transition-colors"
                       aria-label="Close menu"
                     >
                       <svg
@@ -150,21 +150,21 @@ export default function Header() {
                   <nav className="flex flex-col px-4 py-6 gap-4 flex-grow">
                     <Link
                       href="/"
-                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      className="text-black hover:text-green-600 transition-colors text-lg"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Home
                     </Link>
                     <Link
                       href="/blog"
-                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      className="text-black hover:text-green-600 transition-colors text-lg"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Posts
                     </Link>
                     <Link
                       href="/contact"
-                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      className="text-black hover:text-green-600 transition-colors text-lg"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Contact

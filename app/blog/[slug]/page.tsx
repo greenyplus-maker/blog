@@ -37,12 +37,12 @@ export default async function PostPage({
       <PageTitleSetter title={post.title} />
       <article className="max-w-3xl mx-auto px-4 py-8">
         <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        <div className="text-gray-600">
+        <h1 className="text-4xl font-bold mb-4 text-black">{post.title}</h1>
+        <div className="text-black">
           <time dateTime={post.date}>{post.date}</time>
         </div>
         {post.description && (
-          <p className="text-xl text-gray-700 mt-4">{post.description}</p>
+          <p className="text-xl text-black mt-4">{post.description}</p>
         )}
       </header>
       

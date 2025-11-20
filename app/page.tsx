@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getPosts, type Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
+import HeroCarousel from '@/components/HeroCarousel'
 
 export default async function Home() {
   let posts: Post[] = []
@@ -16,14 +17,17 @@ export default async function Home() {
   return (
     <div className="-mt-[100px]">
       {/* 히어로 영역 */}
-      <section className="w-full h-[400px] bg-white flex items-center justify-center mb-16 border-b border-black">
-        <div className="max-w-6xl mx-auto px-4 text-center pt-[100px]">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-green-600">
-            Hello
-          </h1>
-          <p className="text-base text-black max-w-2xl mx-auto">
-            A space to share stories about development and daily life.
-          </p>
+      <section className="w-full h-[400px] relative mb-16 border-b border-black overflow-hidden">
+        <HeroCarousel />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="max-w-6xl mx-auto px-4 text-center pt-[100px] z-10">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+              Hello
+            </h1>
+            <p className="text-base text-white max-w-2xl mx-auto drop-shadow-lg">
+              A space to share stories about development and daily life.
+            </p>
+          </div>
         </div>
       </section>
 

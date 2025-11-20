@@ -46,11 +46,11 @@ export default function ContactPage() {
       </p>
 
       <div className="grid md:grid-cols-2 gap-8 mb-12">
-        <div className="bg-white border border-black p-6 rounded-lg">
+        <div className="bg-white border border-gray-300 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-2 text-black">Email</h3>
           <p className="text-black">contact@example.com</p>
         </div>
-        <div className="bg-white border border-black p-6 rounded-lg">
+        <div className="bg-white border border-gray-300 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-2 text-black">Response Time</h3>
           <p className="text-black">Within 24 hours on weekdays</p>
         </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
             placeholder="Enter your name"
           />
         </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
             placeholder="your@email.com"
           />
         </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
             required
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 bg-white text-black"
             placeholder="Enter subject"
           />
         </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
             rows={6}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 resize-none bg-white text-black"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 resize-none bg-white text-black"
             placeholder="Enter your message"
           />
         </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
         )}
 
         {submitStatus === 'error' && (
-          <div className="bg-white border border-black text-black px-4 py-3 rounded-lg">
+          <div className="bg-white border border-gray-300 text-black px-4 py-3 rounded-lg">
             An error occurred while sending. Please try again.
           </div>
         )}

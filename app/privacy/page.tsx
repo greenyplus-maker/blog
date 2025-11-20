@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             To be in overall charge of personal information processing and to handle complaints and remedy damages related to 
             personal information processing, we have designated a personal information protection officer as follows.
           </p>
-          <div className="bg-white border border-black p-4 rounded-lg mt-4">
+          <div className="bg-white border border-gray-300 p-4 rounded-lg mt-4">
             <p className="text-black">
               <strong>Personal Information Protection Officer</strong><br />
               Contact: contact@example.com

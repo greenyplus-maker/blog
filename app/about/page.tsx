@@ -25,7 +25,7 @@ export default function AboutPage() {
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-6 text-black">Tech Stack</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="bg-white border border-black p-4 rounded-lg">
+          <div className="bg-white border border-gray-300 p-4 rounded-lg">
             <h3 className="font-semibold mb-2 text-black">Frontend</h3>
             <ul className="text-sm text-black space-y-1">
               <li>• React</li>
@@ -34,7 +34,7 @@ export default function AboutPage() {
               <li>• Tailwind CSS</li>
             </ul>
           </div>
-          <div className="bg-white border border-black p-4 rounded-lg">
+          <div className="bg-white border border-gray-300 p-4 rounded-lg">
             <h3 className="font-semibold mb-2 text-black">Backend</h3>
             <ul className="text-sm text-black space-y-1">
               <li>• Node.js</li>
@@ -42,7 +42,7 @@ export default function AboutPage() {
               <li>• Database</li>
             </ul>
           </div>
-          <div className="bg-white border border-black p-4 rounded-lg">
+          <div className="bg-white border border-gray-300 p-4 rounded-lg">
             <h3 className="font-semibold mb-2 text-black">Tools</h3>
             <ul className="text-sm text-black space-y-1">
               <li>• Git</li>
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-6 text-black">Contact</h2>
-        <div className="bg-white border border-black p-6 rounded-lg">
+        <div className="bg-white border border-gray-300 p-6 rounded-lg">
           <p className="text-black mb-2">
             <strong>Email:</strong> contact@example.com
           </p>

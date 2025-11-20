@@ -33,7 +33,7 @@ export default function Header() {
     <header 
       className={`w-full transition-all duration-300 ${
         isScrolled 
-          ? 'fixed top-0 left-0 right-0 z-50 border-b border-black backdrop-blur-[100px] bg-white/30' 
+          ? 'fixed top-0 left-0 right-0 z-50 border-b border-gray-300 backdrop-blur-[100px] bg-white/30' 
           : 'absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent'
       }`}
     >
@@ -128,7 +128,7 @@ export default function Header() {
                 }`}
               >
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-end p-4 border-b border-black">
+                  <div className="flex justify-end p-4 border-b border-gray-300">
                     <button
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="text-black hover:text-green-600 transition-colors"

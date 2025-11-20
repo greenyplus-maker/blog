@@ -13,7 +13,7 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <article className="border border-black rounded-lg p-6 hover:shadow-lg transition-shadow">
+    <article className="border border-gray-300 rounded-lg p-6 hover:shadow-lg transition-shadow">
       <Link href={`/blog/${post.slug}`}>
         <h3 className="text-2xl font-semibold mb-2 hover:text-green-600 transition-colors text-black">
           {post.title}

@@ -37,6 +37,18 @@ export default function HeroCarousel() {
     setCurrentIndex(index)
   }
 
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? heroColors.length - 1 : prevIndex - 1
+    )
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      (prevIndex + 1) % heroColors.length
+    )
+  }
+
   return (
     <div className="relative w-full h-full overflow-hidden">
       {heroColors.map((color, index) => (
@@ -47,6 +59,43 @@ export default function HeroCarousel() {
           } ${color.bgColor}`}
         />
       ))}
+      
+      {/* 좌우 네비게이션 버튼 */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white border border-gray-300 rounded-full p-2 transition-all"
+        aria-label="Previous slide"
+      >
+        <svg
+          className="w-6 h-6 text-black"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white border border-gray-300 rounded-full p-2 transition-all"
+        aria-label="Next slide"
+      >
+        <svg
+          className="w-6 h-6 text-black"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
       
       {/* 인디케이터 */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">

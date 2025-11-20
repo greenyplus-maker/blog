@@ -36,17 +36,15 @@ export default async function Home() {
                 <PostCard key={post.slug} post={post} />
               ))}
             </div>
-            {/* 모든 포스트 보기 버튼 */}
-            {posts.length > 3 && (
-              <div className="text-center mt-8">
-                <Link 
-                  href="/blog" 
-                  className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-                >
-                  View All Posts →
-                </Link>
-              </div>
-            )}
+            {/* View More 버튼 */}
+            <div className="text-center mt-8">
+              <Link 
+                href="/blog" 
+                className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+              >
+                View More →
+              </Link>
+            </div>
           </>
         ) : (
           <div className="text-center py-12 bg-gray-50 rounded-lg">

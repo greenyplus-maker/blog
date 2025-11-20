@@ -76,33 +76,64 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Mobile Menu */}
+          {/* Mobile Drawer Overlay */}
           {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-[100px] border-b border-gray-200 shadow-lg">
-              <div className="flex flex-col px-4 py-4 gap-4">
-                <Link 
-                  href="/" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link 
-                  href="/blog" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Posts
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
+            <>
+              <div
+                className="md:hidden fixed inset-0 bg-black/50 z-40 transition-opacity"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              <div
+                className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
+                  isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-end p-4 border-b border-gray-200">
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      aria-label="Close menu"
+                    >
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  <nav className="flex flex-col px-4 py-6 gap-4 flex-grow">
+                    <Link
+                      href="/"
+                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/blog"
+                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Posts
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="text-gray-600 hover:text-gray-900 transition-colors text-lg"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                  </nav>
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </nav>

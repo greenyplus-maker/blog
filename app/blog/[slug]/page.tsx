@@ -2,6 +2,7 @@ import { getPosts, getPostBySlug } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import { remark } from 'remark'
 import html from 'remark-html'
+import PageTitleSetter from '@/components/PageTitleSetter'
 
 export async function generateStaticParams() {
   try {
@@ -32,8 +33,10 @@ export default async function PostPage({
   const contentHtml = String(processedContent)
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-8">
-      <header className="mb-8">
+    <>
+      <PageTitleSetter title={post.title} />
+      <article className="max-w-3xl mx-auto px-4 py-8">
+        <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="text-gray-600">
           <time dateTime={post.date}>{post.date}</time>
@@ -48,6 +51,7 @@ export default async function PostPage({
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </article>
+    </>
   )
 }
 

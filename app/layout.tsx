@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../styles/globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { PageProvider } from '@/contexts/PageContext'
 
 export const metadata: Metadata = {
   title: 'Personal Blog',
@@ -15,12 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-white text-gray-900 mt-[100px]">
-        <Header />
-        <main className="flex-grow w-full">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-screen flex flex-col bg-white text-gray-900 mt-[100px] mb-20">
+        <PageProvider>
+          <Header />
+          <main className="flex-grow w-full">
+            {children}
+          </main>
+          <Footer />
+        </PageProvider>
       </body>
     </html>
   )

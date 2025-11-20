@@ -1,11 +1,19 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { usePageContext } from '@/contexts/PageContext'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+  const { pageTitle, showBackButton } = usePageContext()
+  
+  // Check if we're on a nested page (dynamic route)
+  const isNestedPage = showBackButton || pathname.split('/').length > 2
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,34 +39,63 @@ export default function Header() {
     >
       <nav className="w-full px-4 py-4">
         <div className="max-w-6xl mx-auto flex justify-center items-center relative">
-          {/* Desktop Menu - Centered */}
-          <div className="hidden md:flex gap-6">
-            <Link 
-              href="/" 
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Home
-            </Link>
-            <Link 
-              href="/blog" 
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Posts
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Contact
-            </Link>
-          </div>
+          {isNestedPage ? (
+            /* Back Button and Title for Nested Pages */
+            <>
+              <button
+                onClick={() => router.back()}
+                className="absolute left-0 text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2"
+                aria-label="Go back"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="hidden sm:inline">Back</span>
+              </button>
+              {pageTitle && (
+                <h1 className="text-lg font-semibold text-gray-900 truncate max-w-md">
+                  {pageTitle}
+                </h1>
+              )}
+            </>
+          ) : (
+            <>
+              {/* Desktop Menu - Centered */}
+              <div className="hidden md:flex gap-6">
+                <Link 
+                  href="/" 
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Posts
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Contact
+                </Link>
+              </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden absolute right-0 text-gray-600 hover:text-gray-900 transition-colors"
-            aria-label="Toggle menu"
-          >
+              {/* Mobile Hamburger Button */}
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden absolute right-0 text-gray-600 hover:text-gray-900 transition-colors"
+                aria-label="Toggle menu"
+              >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -75,9 +112,11 @@ export default function Header() {
               )}
             </svg>
           </button>
+            </>
+          )}
 
-          {/* Mobile Drawer Overlay */}
-          {isMobileMenuOpen && (
+          {/* Mobile Drawer Overlay - Only show on non-nested pages */}
+          {!isNestedPage && isMobileMenuOpen && (
             <>
               <div
                 className="md:hidden fixed inset-0 bg-black/50 z-40 transition-opacity"

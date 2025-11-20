@@ -9,16 +9,16 @@ interface HeroColor {
 
 const heroColors: HeroColor[] = [
   {
-    bgColor: 'bg-green-600',
-    name: 'Green'
-  },
-  {
-    bgColor: 'bg-black',
-    name: 'Black'
+    bgColor: 'bg-green-200',
+    name: 'Muted Green'
   },
   {
     bgColor: 'bg-white',
     name: 'White'
+  },
+  {
+    bgColor: 'bg-gray-800',
+    name: 'Muted Black'
   }
 ]
 

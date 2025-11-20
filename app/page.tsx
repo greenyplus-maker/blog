@@ -19,12 +19,12 @@ export default async function Home() {
       {/* 히어로 영역 */}
       <section className="w-full h-[400px] relative mb-16 border-b border-black overflow-hidden">
         <HeroCarousel />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
           <div className="max-w-6xl mx-auto px-4 text-center pt-[100px] z-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black drop-shadow-lg">
               Hello
             </h1>
-            <p className="text-base text-white max-w-2xl mx-auto drop-shadow-lg">
+            <p className="text-base text-black max-w-2xl mx-auto drop-shadow-lg">
               A space to share stories about development and daily life.
             </p>
           </div>

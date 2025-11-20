@@ -54,7 +54,7 @@ export default async function Home() {
       </div>
 
       {/* 소개 페이지 진입점 */}
-      <section className="max-w-6xl mx-auto px-4">
+      <section className="max-w-6xl mx-auto px-4 mb-20">
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Learn More</h2>

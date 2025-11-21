@@ -1,16 +1,24 @@
+'use client'
+
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { getPosts, type Post } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
 import HeroCarousel from '@/components/HeroCarousel'
 
-export default async function Home() {
-  let posts: Post[] = []
-  try {
-    posts = getPosts()
-  } catch (error) {
-    console.error('Error loading posts:', error)
-    posts = []
-  }
+export default function Home() {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+  const [posts, setPosts] = useState<Post[]>([])
+
+  useEffect(() => {
+    try {
+      const loadedPosts = getPosts()
+      setPosts(loadedPosts)
+    } catch (error) {
+      console.error('Error loading posts:', error)
+      setPosts([])
+    }
+  }, [])
 
   const featuredPosts = posts.slice(0, 3) // 히어로 영역용 최신 3개 포스트
 
@@ -18,15 +26,33 @@ export default async function Home() {
     <div className="-mt-[100px]">
       {/* 히어로 영역 */}
       <section className="w-full h-[400px] relative mb-16 border-b border-gray-300 overflow-hidden">
-        <HeroCarousel />
+        <HeroCarousel onSlideChange={setCurrentSlideIndex} />
         <div className="absolute inset-0 flex items-center justify-center bg-black/20">
           <div className="max-w-6xl mx-auto px-4 text-center pt-[100px] z-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
-              Hello
-            </h1>
-            <p className="text-base text-black max-w-2xl mx-auto">
-              A space to share stories about development and daily life.
-            </p>
+            {currentSlideIndex === 0 ? (
+              // 첫 번째 슬라이드: 그리팅 메시지
+              <>
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 text-black">
+                  Hello, I'm Luna
+                </h1>
+                <p className="text-xl md:text-2xl text-black mb-2 font-medium">
+                  workingmom luna
+                </p>
+                <p className="text-base text-black max-w-2xl mx-auto">
+                  Welcome to my space where I share stories about development and daily life.
+                </p>
+              </>
+            ) : (
+              // 다른 슬라이드: 기본 메시지
+              <>
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
+                  Hello
+                </h1>
+                <p className="text-base text-black max-w-2xl mx-auto">
+                  A space to share stories about development and daily life.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>

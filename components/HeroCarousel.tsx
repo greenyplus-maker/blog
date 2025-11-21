@@ -22,7 +22,11 @@ const heroColors: HeroColor[] = [
   }
 ]
 
-export default function HeroCarousel() {
+interface HeroCarouselProps {
+  onSlideChange?: (index: number) => void
+}
+
+export default function HeroCarousel({ onSlideChange }: HeroCarouselProps = {}) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
@@ -35,19 +39,28 @@ export default function HeroCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
+    onSlideChange?.(index)
   }
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? heroColors.length - 1 : prevIndex - 1
-    )
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? heroColors.length - 1 : prevIndex - 1
+      onSlideChange?.(newIndex)
+      return newIndex
+    })
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      (prevIndex + 1) % heroColors.length
-    )
+    setCurrentIndex((prevIndex) => {
+      const newIndex = (prevIndex + 1) % heroColors.length
+      onSlideChange?.(newIndex)
+      return newIndex
+    })
   }
+
+  useEffect(() => {
+    onSlideChange?.(currentIndex)
+  }, [currentIndex, onSlideChange])
 
   return (
     <div className="relative w-full h-full overflow-hidden">
